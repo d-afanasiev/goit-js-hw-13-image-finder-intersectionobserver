@@ -46,8 +46,6 @@ observer.observe(loadMoreBtn.refs.button);
 
 refs.formSearch.addEventListener('submit', onSubmit);
 
-loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
-
 function onSubmit(e) {
   e.preventDefault();
 
