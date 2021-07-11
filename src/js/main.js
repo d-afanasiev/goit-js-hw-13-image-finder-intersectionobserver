@@ -23,6 +23,27 @@ const refs = {
 const loadMoreBtn = new LoadMoreBtn({ selector: '[data-value="load-more"]', hidden: true });
 const apiService = new ApiService();
 
+//start Intersection Observer API
+
+const options = {
+  rootMargin: '0px',
+  threshold: 0.25,
+};
+
+const onEntry = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && apiService.query !== '' && apiService.page > 1) {
+      onLoadMore();
+    }
+  });
+};
+
+const observer = new IntersectionObserver(onEntry, options);
+
+observer.observe(loadMoreBtn.refs.button);
+
+//stop Intersection Observer API
+
 refs.formSearch.addEventListener('submit', onSubmit);
 
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
@@ -60,7 +81,6 @@ function onLoadMore() {
       appendGallery(data);
       loadMoreBtn.enable();
     })
-    .then(data => scrollIntoView())
     .catch(error => {
       errorMessage(error);
       loadMoreBtn.hide();
