@@ -1,12 +1,12 @@
 {
-  "name": "goit-js-hw-13-image-finder",
+  "name": "goit-js-hw-13-image-finder-intersectionobserver",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://d-afanasiev.github.io/goit-js-hw-13-image-finder",
+  "homepage": "https://d-afanasiev.github.io/goit-js-hw-13-image-finder-intersectionobserver",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder-intersectionobserver/"
   },
   "repository": {
     "type": "git",
